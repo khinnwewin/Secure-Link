@@ -23,3 +23,4 @@ Route::get('/one', function(){
 });
 Route::get('login/{provider}', 'SocialController@redirect');
 Route::get('login/{provider}/callback','SocialController@Callback');
+

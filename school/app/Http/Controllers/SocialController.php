@@ -23,8 +23,8 @@ class SocialController extends Controller
 		$user = User::create([
 		        'name'          => $userSocial->getName(),
 		        'email'         => $userSocial->getEmail(),
-		        'provider_id'   => $userSocial->getId(),
-		        'provider'      => $provider,
+		        // 'provider_id'   => $userSocial->getId(),
+		        // 'provider'      => $provider,
 		    ]);
 		 return redirect()->route('home');
 		}
