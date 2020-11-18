@@ -38,8 +38,8 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @var array
      */
-    //facebook
-    // protected $casts = [
-    //     'email_verified_at' => 'datetime',
-    // ];
+    
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
 }

@@ -14,13 +14,18 @@
 Route::get('/', function () {
     return view('welcome');
 });
- // Route::get('/home', 'HomeController@index')->name('home');
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/one', function(){
-	return "aa";
-});
+ 
 Route::get('login/{provider}', 'SocialController@redirect');
 Route::get('login/{provider}/callback','SocialController@Callback');
 
+
+Route::group(['prefix' => 'admin'], function () {
+	 Auth::routes(['verify' => true]);
+	
+});
+Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['prefix' => 'admin','middleware' => 'auth', 'namespace' => 'Backend'], 
+	function () {
+	Route::resource('article', 'ArticleController');
+		
+});

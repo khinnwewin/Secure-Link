@@ -69,5 +69,9 @@
             </div>
         </div>
     </div>
+    <div class="col-md-6 offset-md-4">
+         <a href="{{ url('/login/facebook') }}" class="btn btn-facebook"> Facebook</a>
+         
+    </div>
 </div>
 @endsection
