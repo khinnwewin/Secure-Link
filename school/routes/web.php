@@ -27,5 +27,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'admin','middleware' => 'auth', 'namespace' => 'Backend'], 
 	function () {
 	Route::resource('article', 'ArticleController');
+	Route::resource('one', 'OneController');
 		
 });
