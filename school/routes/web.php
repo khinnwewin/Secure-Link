@@ -28,5 +28,10 @@ Route::group(['prefix' => 'admin','middleware' => 'auth', 'namespace' => 'Backen
 	function () {
 	Route::resource('article', 'ArticleController');
 	Route::resource('one', 'OneController');
+	Route::resource('information', 'InformationController');
 		
+});
+Route::group(['namespace' => 'Frontend'], function () {
+	Route::get('/', 'WebController@index');
+	
 });
